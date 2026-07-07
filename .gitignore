@@ -1,0 +1,28 @@
+# cloned target repository (fetched fresh via git clone, not our code)
+repos/
+
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Windows-only Hadoop winutils binaries (downloaded locally to run pyspark)
+hadoop/
+
+# Spark Structured Streaming checkpoints (local run state)
+checkpoints/
+
+# large generated data files
+data/discovered_files.json
+data/processed_manifest.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# instructor-provided assignment PDF (course material, not team's work)
+[BigData] Lab04 - StreamingV0.pdf
+lab04_content.txt
