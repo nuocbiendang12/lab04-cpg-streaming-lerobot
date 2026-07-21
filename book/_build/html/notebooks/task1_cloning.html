@@ -388,9 +388,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysing-the-discovery-results">1.4 Analysing the Discovery Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusion-logic">1.5 Exclusion Logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">1.6 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">⚠️ Issues encountered</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">💡 Resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">Issues encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">Resolution</a></li>
 </ul>
 </li>
 </ul>
@@ -635,7 +635,7 @@ Sample excluded files (first 5):
 <section id="reflection">
 <h2>1.6 Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
 <section id="what-worked">
-<h3>✅ What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
+<h3>What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--depth=1</span></code> shallow clone completed in ~35 seconds, downloading only 70 MB instead of the full ~260 MB repository.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pathlib.rglob('*.py')</span></code> correctly found all 746 Python files, including nested policy model files in deep sub-directories.</p></li>
@@ -644,14 +644,14 @@ Sample excluded files (first 5):
 </ul>
 </section>
 <section id="issues-encountered">
-<h3>⚠️ Issues encountered<a class="headerlink" href="#issues-encountered" title="Link to this heading">#</a></h3>
+<h3>Issues encountered<a class="headerlink" href="#issues-encountered" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Several large policy model files exceeded 100 KB (largest: <code class="docutils literal notranslate"><span class="pre">modeling_molmoact2.py</span></code> at 188.9 KB). These generate very large AST trees, which were the slowest files to parse in Task 2.</p></li>
 <li><p>LeRobot uses both <code class="docutils literal notranslate"><span class="pre">tests/</span></code> and <code class="docutils literal notranslate"><span class="pre">test_*.py</span></code> naming conventions, requiring both exclusion rules.</p></li>
 </ul>
 </section>
 <section id="resolution">
-<h3>💡 Resolution<a class="headerlink" href="#resolution" title="Link to this heading">#</a></h3>
+<h3>Resolution<a class="headerlink" href="#resolution" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Implemented <code class="docutils literal notranslate"><span class="pre">--limit</span> <span class="pre">N</span></code> flag in the Parser Service so we could smoke-test with a small subset before running the full 543-file pipeline.</p></li>
 <li><p>Stable IDs (SHA-256 hash of file path + position) ensure that if any large file is reprocessed, no duplicates are created downstream.</p></li>
@@ -735,9 +735,9 @@ Sample excluded files (first 5):
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysing-the-discovery-results">1.4 Analysing the Discovery Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusion-logic">1.5 Exclusion Logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">1.6 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">⚠️ Issues encountered</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">💡 Resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">Issues encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">Resolution</a></li>
 </ul>
 </li>
 </ul>
@@ -754,7 +754,7 @@ Sample excluded files (first 5):
   <div class="footer-item">
     
 <p class="component-author">
-By Nhóm nuocbiendang12
+By Nhóm CAF
 </p>
 
   </div>

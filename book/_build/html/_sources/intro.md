@@ -1,7 +1,7 @@
 # Lab 04 – CPG Streaming Pipeline · `huggingface/lerobot`
 
 **Course**: Nhập Môn Dữ Liệu Lớn – HCMUS  
-**Team**: nuocbiendang12  
+**Team**: CAF  
 **Repository chosen**: [`huggingface/lerobot`](https://github.com/huggingface/lerobot)
 
 ---
