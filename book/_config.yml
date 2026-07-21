@@ -1,0 +1,28 @@
+# Book settings
+title: "Lab04 – CPG Streaming Pipeline · LeRobot"
+author: "Nhóm nuocbiendang12"
+logo: ""
+
+execute:
+  execute_notebooks: "off"   # notebooks have pre-run outputs
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+
+html:
+  use_issues_button: false
+  use_repository_button: true
+  use_edit_page_button: false
+  home_page_in_navbar: true
+  extra_navbar: ""
+  google_analytics_id: ""
+
+repository:
+  url: https://github.com/nuocbiendang12/lab04-cpg-streaming-lerobot
+  branch: main
+  path_to_book: book
+
+launch_buttons:
+  binderhub_url: ""

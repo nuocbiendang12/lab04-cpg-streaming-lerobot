@@ -1,0 +1,13 @@
+format: jb-book
+root: intro
+chapters:
+  - file: notebooks/task1_cloning
+    title: "Task 1 · Repository Cloning & File Discovery"
+  - file: notebooks/task2_parser
+    title: "Task 2 · Incremental CPG Parser Service"
+  - file: notebooks/task3_kafka
+    title: "Task 3 · Kafka Topic Design"
+  - file: notebooks/task4_neo4j
+    title: "Task 4 · Graph Topology Ingestion (Neo4j)"
+  - file: architecture
+    title: "Architecture Diagram"

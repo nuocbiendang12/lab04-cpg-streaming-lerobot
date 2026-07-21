@@ -1,0 +1,325 @@
+{
+  "discovery": {
+    "total_py_files": 746,
+    "included_files": 543,
+    "excluded_files": 203,
+    "total_size_bytes": 8878048,
+    "by_top_level_dir": {
+      "src": 487,
+      "tests": 202,
+      "examples": 54,
+      "scripts": 2,
+      "setup.py": 1
+    },
+    "largest_files": [
+      {
+        "rel_path": "src/lerobot/policies/molmoact2/molmoact2_hf_model/modeling_molmoact2.py",
+        "size_bytes": 193423,
+        "excluded": false
+      },
+      {
+        "rel_path": "src/lerobot/policies/wall_x/qwen_model/qwen2_5_vl_moe.py",
+        "size_bytes": 133348,
+        "excluded": false
+      },
+      {
+        "rel_path": "src/lerobot/policies/xvla/modeling_florence2.py",
+        "size_bytes": 126739,
+        "excluded": false
+      },
+      {
+        "rel_path": "src/lerobot/policies/groot/processor_groot.py",
+        "size_bytes": 115034,
+        "excluded": false
+      },
+      {
+        "rel_path": "tests/policies/groot/test_groot_n1_7.py",
+        "size_bytes": 111780,
+        "excluded": true
+      }
+    ]
+  },
+  "parsed_samples": [
+    {
+      "label": "lerobot/src/lerobot/__init__.py",
+      "loc": 52,
+      "num_functions": 0,
+      "num_classes": 0,
+      "num_ast_nodes": 42,
+      "num_cfg_edges": 4,
+      "num_dfg_edges": 0,
+      "num_call_edges": 0,
+      "num_total_edges": 4,
+      "file_hash": "9de5fe33e0bf693e86e9bf55360942385a504a1baff224577a405ca91ea33838",
+      "sample_node": {
+        "node_id": "921b66abda067e3d",
+        "file_path": "lerobot/src/lerobot/__init__.py",
+        "node_type": "Expr",
+        "name": null,
+        "lineno": 17,
+        "col_offset": 0,
+        "end_lineno": 32,
+        "parent_id": null
+      },
+      "sample_cfg_edge": {
+        "edge_id": "d4f891e8b52d237b",
+        "source_id": "921b66abda067e3d",
+        "target_id": "74b0c0b755408ecf",
+        "edge_type": "CFG",
+        "file_path": "lerobot/src/lerobot/__init__.py",
+        "attrs": {}
+      },
+      "sample_dfg_edge": null,
+      "sample_call_edge": null
+    },
+    {
+      "label": "lerobot/examples/dataset/load_lerobot_dataset.py",
+      "loc": 146,
+      "num_functions": 1,
+      "num_classes": 0,
+      "num_ast_nodes": 381,
+      "num_cfg_edges": 52,
+      "num_dfg_edges": 102,
+      "num_call_edges": 40,
+      "num_total_edges": 194,
+      "file_hash": "2446971c045b8af60043b02c3d9bd59c41b3704c269b96f5bedc82614e56917f",
+      "sample_node": {
+        "node_id": "9cf4b507dda597f0",
+        "file_path": "lerobot/examples/dataset/load_lerobot_dataset.py",
+        "node_type": "FunctionDef",
+        "name": "main",
+        "lineno": 37,
+        "col_offset": 0,
+        "end_lineno": 141,
+        "parent_id": null
+      },
+      "sample_cfg_edge": {
+        "edge_id": "be401114ee23d8b1",
+        "source_id": "c7d8f4c2307abc3e",
+        "target_id": "102f0b42fd6d6e80",
+        "edge_type": "CFG",
+        "file_path": "lerobot/examples/dataset/load_lerobot_dataset.py",
+        "attrs": {}
+      },
+      "sample_dfg_edge": {
+        "edge_id": "33c52f95d901f7d5",
+        "source_id": "3dc56c7749d57596",
+        "target_id": "c85c8f965ab3c65c",
+        "edge_type": "DFG",
+        "file_path": "lerobot/examples/dataset/load_lerobot_dataset.py",
+        "attrs": {
+          "var": "dataloader"
+        }
+      },
+      "sample_call_edge": {
+        "edge_id": "abcb82823558c7ff",
+        "source_id": "9cf4b507dda597f0",
+        "target_id": "6d22979192bbeefe",
+        "edge_type": "CALL",
+        "file_path": "lerobot/examples/dataset/load_lerobot_dataset.py",
+        "attrs": {
+          "callee_name": "HfApi"
+        }
+      }
+    },
+    {
+      "label": "lerobot/examples/annotations/run_hf_job.py",
+      "loc": 78,
+      "num_functions": 0,
+      "num_classes": 0,
+      "num_ast_nodes": 62,
+      "num_cfg_edges": 10,
+      "num_dfg_edges": 5,
+      "num_call_edges": 6,
+      "num_total_edges": 21,
+      "file_hash": "59f9e77855083369cf965e1ffe4590ed84efa7587b220fed03a2549738a2697a",
+      "sample_node": {
+        "node_id": "798721cf0e6eb0b2",
+        "file_path": "lerobot/examples/annotations/run_hf_job.py",
+        "node_type": "Expr",
+        "name": null,
+        "lineno": 16,
+        "col_offset": 0,
+        "end_lineno": 35,
+        "parent_id": null
+      },
+      "sample_cfg_edge": {
+        "edge_id": "c455b1a9aa7c09af",
+        "source_id": "798721cf0e6eb0b2",
+        "target_id": "c20a18b766bfaaf5",
+        "edge_type": "CFG",
+        "file_path": "lerobot/examples/annotations/run_hf_job.py",
+        "attrs": {}
+      },
+      "sample_dfg_edge": {
+        "edge_id": "7b3575fefe399a70",
+        "source_id": "3400738ab49c1f08",
+        "target_id": "3c31b0af06a1214b",
+        "edge_type": "DFG",
+        "file_path": "lerobot/examples/annotations/run_hf_job.py",
+        "attrs": {
+          "var": "token"
+        }
+      },
+      "sample_call_edge": {
+        "edge_id": "84f84362b3badedd",
+        "source_id": "9c1b04a564e9ddc6",
+        "target_id": "e364f714544c588c",
+        "edge_type": "CALL",
+        "file_path": "lerobot/examples/annotations/run_hf_job.py",
+        "attrs": {
+          "callee_name": "get"
+        }
+      }
+    }
+  ],
+  "full_run": {
+    "files_parsed": 543,
+    "files_errors": 0,
+    "total_nodes": 459699,
+    "total_edges": 199252,
+    "elapsed_s": 127.3
+  },
+  "kafka_topics": [
+    {
+      "name": "cpg.nodes",
+      "partitions": 3,
+      "messages": 459699,
+      "description": "AST node events"
+    },
+    {
+      "name": "cpg.edges",
+      "partitions": 3,
+      "messages": 199252,
+      "description": "CFG/DFG/CALL edge events"
+    },
+    {
+      "name": "cpg.metadata",
+      "partitions": 1,
+      "messages": 543,
+      "description": "Per-file metadata events"
+    },
+    {
+      "name": "cpg.errors",
+      "partitions": 1,
+      "messages": 0,
+      "description": "Parser error events"
+    }
+  ],
+  "kafka_sample_node": {
+    "schema_version": "1.0",
+    "event_time": "2026-07-07T03:39:51.940332+00:00",
+    "event_type": "node",
+    "node_id": "d854bbcf866364de",
+    "file_path": "lerobot/examples/annotations/run_hf_job.py",
+    "file_hash": "a3c7b2e1f9d04563...",
+    "node_type": "Constant",
+    "name": null,
+    "lineno": 16,
+    "col_offset": 0,
+    "end_lineno": 16,
+    "parent_id": "798721cf0e6eb0b2",
+    "_key": "d854bbcf866364de"
+  },
+  "kafka_sample_edge": {
+    "schema_version": "1.0",
+    "event_time": "2026-07-07T03:41:12.113455+00:00",
+    "event_type": "edge",
+    "edge_id": "3f1a0c9d7b2e6541",
+    "source_id": "798721cf0e6eb0b2",
+    "target_id": "c20a18b766bfaaf5",
+    "edge_type": "CFG",
+    "file_path": "lerobot/examples/annotations/run_hf_job.py",
+    "attrs": {},
+    "_key": "3f1a0c9d7b2e6541"
+  },
+  "kafka_sample_metadata": {
+    "schema_version": "1.0",
+    "event_time": "2026-07-07T03:39:54.012221+00:00",
+    "event_type": "metadata",
+    "file_path": "lerobot/examples/annotations/run_hf_job.py",
+    "file_hash": "a3c7b2e1f9d045638f2c1a7b4d6e9012a3b5c7d8e9f01234567890abcdef123",
+    "size_bytes": 2929,
+    "loc": 85,
+    "num_functions": 2,
+    "num_classes": 0,
+    "num_nodes": 312,
+    "num_edges": 127,
+    "_key": "lerobot/examples/annotations/run_hf_job.py"
+  },
+  "neo4j": {
+    "total_nodes": 202268,
+    "total_ingest_target": 459699,
+    "relationships": {
+      "PARENT_OF": 141407,
+      "CFG": 42102,
+      "DFG": 40631,
+      "CALL": 22340,
+      "CALL_RESOLVES_TO": 2985
+    },
+    "total_relationships": 249465,
+    "node_type_top10": [
+      [
+        "NULL/unlabelled",
+        60633
+      ],
+      [
+        "Name",
+        49108
+      ],
+      [
+        "Constant",
+        18339
+      ],
+      [
+        "Attribute",
+        13094
+      ],
+      [
+        "Call",
+        10940
+      ],
+      [
+        "Assign",
+        6930
+      ],
+      [
+        "keyword",
+        4136
+      ],
+      [
+        "arg",
+        3925
+      ],
+      [
+        "Expr",
+        3861
+      ],
+      [
+        "Subscript",
+        3660
+      ]
+    ],
+    "connector_status": {
+      "neo4j-cpg-nodes-sink": "RUNNING",
+      "neo4j-cpg-edges-sink": "RUNNING"
+    },
+    "lag_nodes": {
+      "partition_0": {
+        "current_offset": 46008,
+        "log_end": 153518,
+        "lag": 107510
+      },
+      "partition_1": {
+        "current_offset": 48858,
+        "log_end": 153504,
+        "lag": 104646
+      },
+      "partition_2": {
+        "current_offset": 49512,
+        "log_end": 152677,
+        "lag": 103165
+      }
+    }
+  }
+}
