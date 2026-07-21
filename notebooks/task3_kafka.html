@@ -388,9 +388,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-messages-from-each-topic">3.4 Sample Messages from Each Topic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kafka-producer-implementation">3.5 Kafka Producer Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">3.6 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">⚠️ Issues encountered</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-learned">💡 Lessons learned</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">Issues encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-learned">Lessons learned</a></li>
 </ul>
 </li>
 </ul>
@@ -706,7 +706,7 @@ Current topics on broker:
 <section id="reflection">
 <h2>3.6 Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
 <section id="what-worked">
-<h3>✅ What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
+<h3>What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>All 659,494 messages were produced with zero delivery errors thanks to <code class="docutils literal notranslate"><span class="pre">acks='all'</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">schema_version</span></code> + <code class="docutils literal notranslate"><span class="pre">event_time</span></code> envelope was verified to arrive intact in Neo4j (visible in <code class="docutils literal notranslate"><span class="pre">n.schema_version</span></code> and <code class="docutils literal notranslate"><span class="pre">n.event_time</span></code> node properties).</p></li>
@@ -715,14 +715,14 @@ Current topics on broker:
 </ul>
 </section>
 <section id="issues-encountered">
-<h3>⚠️ Issues encountered<a class="headerlink" href="#issues-encountered" title="Link to this heading">#</a></h3>
+<h3>Issues encountered<a class="headerlink" href="#issues-encountered" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Port conflict</strong>: Initially tried <code class="docutils literal notranslate"><span class="pre">localhost:9092</span></code> (internal Docker network address). This is only reachable inside the Docker network. The external host must use <code class="docutils literal notranslate"><span class="pre">localhost:29092</span></code> (mapped <code class="docutils literal notranslate"><span class="pre">PLAINTEXT_HOST</span></code> listener). Fixed in all scripts.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">cpg.errors</span></code> always empty</strong>: lerobot’s source files all parse cleanly, so the error topic received 0 messages. This is correct behaviour — the topic exists as a safety net.</p></li>
 </ul>
 </section>
 <section id="lessons-learned">
-<h3>💡 Lessons learned<a class="headerlink" href="#lessons-learned" title="Link to this heading">#</a></h3>
+<h3>Lessons learned<a class="headerlink" href="#lessons-learned" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Separating nodes and edges into their own topics (rather than one giant topic) enabled the Neo4j connector to consume them with independent consumer groups, each with 3 parallel tasks matching the 3 partitions.</p></li>
 </ul>
@@ -805,9 +805,9 @@ Current topics on broker:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-messages-from-each-topic">3.4 Sample Messages from Each Topic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kafka-producer-implementation">3.5 Kafka Producer Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">3.6 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">⚠️ Issues encountered</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-learned">💡 Lessons learned</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">Issues encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lessons-learned">Lessons learned</a></li>
 </ul>
 </li>
 </ul>

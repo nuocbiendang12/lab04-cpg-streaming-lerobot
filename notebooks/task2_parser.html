@@ -388,9 +388,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-multiple-files-batch-results">2.3 Parsing Multiple Files — Batch Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-run-results-all-543-files">2.4 Full-Run Results (all 543 files)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">2.5 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">⚠️ Issues encountered</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">💡 Resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">Issues encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">Resolution</a></li>
 </ul>
 </li>
 </ul>
@@ -760,7 +760,7 @@ Largest single file time: ~3.2s (modeling_molmoact2.py, 188.9 KB)
 <section id="reflection">
 <h2>2.5 Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
 <section id="what-worked">
-<h3>✅ What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
+<h3>What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">ast</span></code> module parsed all 543 files with <strong>zero syntax errors</strong>, confirming lerobot’s codebase is valid Python 3.</p></li>
 <li><p>Processing one file at a time (<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">file</span> <span class="pre">in</span> <span class="pre">targets:</span> <span class="pre">process(file)</span></code>) keeps peak memory at ~50 MB regardless of repo size — bounded memory design is confirmed.</p></li>
@@ -769,14 +769,14 @@ Largest single file time: ~3.2s (modeling_molmoact2.py, 188.9 KB)
 </ul>
 </section>
 <section id="issues-encountered">
-<h3>⚠️ Issues encountered<a class="headerlink" href="#issues-encountered" title="Link to this heading">#</a></h3>
+<h3>Issues encountered<a class="headerlink" href="#issues-encountered" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>DFG across scope boundaries</strong>: The simplified DFG extractor only links definition→use within the same function scope. Cross-function data flow (e.g., a global variable modified in one function and read in another) is not captured. This is a known simplification inherent to single-file, scope-local analysis.</p></li>
 <li><p><strong>AST nodes without <code class="docutils literal notranslate"><span class="pre">lineno</span></code></strong> (e.g., <code class="docutils literal notranslate"><span class="pre">Load</span></code>, <code class="docutils literal notranslate"><span class="pre">Store</span></code>, <code class="docutils literal notranslate"><span class="pre">Del</span></code> context markers): These are skipped, as they have no meaningful source position for node IDs.</p></li>
 </ul>
 </section>
 <section id="resolution">
-<h3>💡 Resolution<a class="headerlink" href="#resolution" title="Link to this heading">#</a></h3>
+<h3>Resolution<a class="headerlink" href="#resolution" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The scope limitation is documented in the code (<code class="docutils literal notranslate"><span class="pre">cpg_extractor.py</span></code> docstring) and is acceptable for Lab 04’s educational objectives.</p></li>
 <li><p>Skipping position-less AST nodes is handled cleanly in <code class="docutils literal notranslate"><span class="pre">extract_ast_nodes()</span></code> with a <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">hasattr(node,</span> <span class="pre">'lineno'):</span> <span class="pre">return</span></code> guard.</p></li>
@@ -860,9 +860,9 @@ Largest single file time: ~3.2s (modeling_molmoact2.py, 188.9 KB)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-multiple-files-batch-results">2.3 Parsing Multiple Files — Batch Results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-run-results-all-543-files">2.4 Full-Run Results (all 543 files)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">2.5 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">⚠️ Issues encountered</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">💡 Resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#issues-encountered">Issues encountered</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolution">Resolution</a></li>
 </ul>
 </li>
 </ul>

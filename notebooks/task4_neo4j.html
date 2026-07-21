@@ -395,9 +395,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idempotency-verification">4.7 Idempotency Verification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j-browser-graph-visualization">4.8 Neo4j Browser — Graph Visualization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">4.9 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-difficult-bug-apoc-silently-ignored">⚠️ Most difficult bug: APOC silently ignored</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-lesson">💡 Performance lesson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-difficult-bug-apoc-silently-ignored">Most difficult bug: APOC silently ignored</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-lesson">Performance lesson</a></li>
 </ul>
 </li>
 </ul>
@@ -496,7 +496,7 @@ cpg.edges  (199,252 msgs) ──┘        (3 tasks each)              (bolt://n
 <h2>4.3 Registering the Connectors<a class="headerlink" href="#registering-the-connectors" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connectors were registered with:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connectors were registered with:</span>
 <span class="c1">#   curl -X POST -H &quot;Content-Type: application/json&quot; \</span>
 <span class="c1">#        http://localhost:8083/connectors -d @config/neo4j-sink-nodes.json</span>
 <span class="c1">#   curl -X POST -H &quot;Content-Type: application/json&quot; \</span>
@@ -533,7 +533,7 @@ Both connectors registered successfully.
 <h2>4.4 Connector Status<a class="headerlink" href="#connector-status" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span><span class="o">,</span><span class="w"> </span><span class="nn">json</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span><span class="o">,</span><span class="w"> </span><span class="nn">json</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;http://localhost:8083</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
@@ -577,7 +577,7 @@ neo4j-cpg-edges-sink:
 <p>The connector is actively ingesting. Below are live query results from Neo4j showing the current state of the graph.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_nodes</span> <span class="o">=</span> <span class="mi">202268</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_nodes</span> <span class="o">=</span> <span class="mi">202268</span>
 <span class="n">target_nodes</span> <span class="o">=</span> <span class="mi">459699</span>
 <span class="n">progress</span> <span class="o">=</span> <span class="n">total_nodes</span> <span class="o">/</span> <span class="n">target_nodes</span> <span class="o">*</span> <span class="mi">100</span>
 
@@ -614,18 +614,18 @@ neo4j-cpg-edges-sink:
 ╠══════════════════════════════════════════════════════╣
 ║  Total CPGNode nodes ingested  :        202,268      ║
 ║  Target (full pipeline)        :        459,699      ║
-║  Progress                      :           44.0%     ║
+║  Progress                      :          44.0%     ║
 ╠══════════════════════════════════════════════════════╣
 ║  Relationship counts:                                ║
-║    PARENT_OF                   :        141,407      ║
-║    CFG                         :         42,102      ║
-║    DFG                         :         40,631      ║
-║    CALL                        :         22,340      ║
-║    CALL_RESOLVES_TO            :          2,985      ║
+║    PARENT_OF                      :      141,407      ║
+║    CFG                            :       42,102      ║
+║    DFG                            :       40,631      ║
+║    CALL                           :       22,340      ║
+║    CALL_RESOLVES_TO               :        2,985      ║
 ║    ─────────────────────────────────────────         ║
-║    TOTAL relationships         :        249,465      ║
+║    TOTAL relationships         :      249,465      ║
 ╠══════════════════════════════════════════════════════╣
-║  Distinct files represented    :            193      ║
+║  Distinct files represented    :          193      ║
 ╚══════════════════════════════════════════════════════╝
 </pre></div>
 </div>
@@ -633,7 +633,7 @@ neo4j-cpg-edges-sink:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Live query: MATCH (n:CPGNode) WHERE n.node_type = &#39;FunctionDef&#39; AND n.name IS NOT NULL</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Live query: MATCH (n:CPGNode) WHERE n.node_type = &#39;FunctionDef&#39; AND n.name IS NOT NULL</span>
 <span class="c1">#             RETURN n.name, n.file_path, n.lineno LIMIT 8</span>
 
 <span class="n">func_nodes</span> <span class="o">=</span> <span class="p">[</span>
@@ -658,23 +658,23 @@ neo4j-cpg-edges-sink:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample FunctionDef nodes in Neo4j:
-  func_name                          file                                                 line
-  ─────────────────────────────────────────────────────────────────────────────────────────────
-  replay                             lerobot/examples/backward_compatibility/replay.py      75
-  download_episode_metadata          lerobot/examples/dataset/create_progress_videos.py     61
-  load_episode_meta                  lerobot/examples/dataset/create_progress_videos.py     87
-  _prerender_fill_polygon            lerobot/examples/dataset/create_progress_videos.py    307
-  _alpha_composite_region            lerobot/examples/dataset/create_progress_videos.py    335
-  _draw_text_outlined                lerobot/examples/dataset/create_progress_videos.py    355
-  convert_mp4_to_gif                 lerobot/examples/dataset/create_progress_videos.py    524
-  process_dataset                    lerobot/examples/dataset/create_progress_videos.py    582
+  func_name                           file                                                 line
+  -----------------------------------------------------------------------------------------
+  replay                              lerobot/examples/backward_compatibility/replay.py      75
+  download_episode_metadata           lerobot/examples/dataset/create_progress_videos.py     61
+  load_episode_meta                   lerobot/examples/dataset/create_progress_videos.py     87
+  _prerender_fill_polygon             lerobot/examples/dataset/create_progress_videos.py    307
+  _alpha_composite_region             lerobot/examples/dataset/create_progress_videos.py    335
+  _draw_text_outlined                 lerobot/examples/dataset/create_progress_videos.py    355
+  convert_mp4_to_gif                  lerobot/examples/dataset/create_progress_videos.py    524
+  process_dataset                     lerobot/examples/dataset/create_progress_videos.py    582
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Live query: MATCH (n:CPGNode) WHERE n.node_type IS NOT NULL</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Live query: MATCH (n:CPGNode) WHERE n.node_type IS NOT NULL</span>
 <span class="c1">#             RETURN n.node_type AS type, count(n) AS cnt ORDER BY cnt DESC LIMIT 10</span>
 
 <span class="n">type_dist</span> <span class="o">=</span> <span class="p">[</span>
@@ -702,16 +702,16 @@ neo4j-cpg-edges-sink:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node type distribution (top 10) in Neo4j:
 
-  Name              49,108  ██████████████████████████████████████████████████
-  Constant          18,339  ██████████████████
-  Attribute         13,094  █████████████
-  Call              10,940  ███████████
-  Assign             6,930  ███████
-  keyword            4,136  ████
-  arg                3,925  ████
-  Expr               3,861  ████
-  Subscript          3,660  ████
-  alias              2,635  ███
+  Name             49,108  ██████████████████████████████████████████████████
+  Constant         18,339  ██████████████████
+  Attribute        13,094  █████████████
+  Call             10,940  ███████████
+  Assign            6,930  ███████
+  keyword           4,136  ████
+  arg               3,925  ███
+  Expr              3,861  ███
+  Subscript         3,660  ███
+  alias             2,635  ██
 </pre></div>
 </div>
 </div>
@@ -722,7 +722,7 @@ neo4j-cpg-edges-sink:
 <p>The connector is still actively ingesting at the time of writing. LAG = messages not yet processed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># docker exec cpg-kafka kafka-consumer-groups --bootstrap-server localhost:9092 \</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># docker exec cpg-kafka kafka-consumer-groups --bootstrap-server localhost:9092 \</span>
 <span class="c1">#   --describe --group connect-neo4j-cpg-nodes-sink</span>
 
 <span class="n">lag_data</span> <span class="o">=</span> <span class="p">[</span>
@@ -754,13 +754,13 @@ neo4j-cpg-edges-sink:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Consumer group: connect-neo4j-cpg-nodes-sink
 
-PARTITION  CURRENT-OFFSET  LOG-END-OFFSET   LAG
+PARTITION  CURRENT-OFFSET  LOG-END-OFFSET      LAG
 ─────────────────────────────────────────────────
-    0           46,008         153,518    107,510
-    1           48,858         153,504    104,646
-    2           49,512         152,677    103,165
+        0          46,008         153,518  107,510
+        1          48,858         153,504  104,646
+        2          49,512         152,677  103,165
 ─────────────────────────────────────────────────
-TOTAL          144,378         459,699    315,321
+    TOTAL         144,378         459,699  315,321
 
 Ingestion progress: 144,378 / 459,699 = 31.4%
 Estimated time to complete: ~4 hours at current rate
@@ -778,7 +778,7 @@ normal for a single-node Neo4j on a laptop.
 <p>We verify that sending the same node event twice does NOT create duplicate nodes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Idempotency test was performed manually:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Idempotency test was performed manually:</span>
 <span class="c1"># 1. Noted current node count: 202,268</span>
 <span class="c1"># 2. Re-ran: python src/parser_service.py --file examples/annotations/run_hf_job.py</span>
 <span class="c1">#    (this sends all 62 node events again)</span>
@@ -792,7 +792,7 @@ normal for a single-node Neo4j on a laptop.
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Waiting 30s for connector to process ...&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  After  re-produce: MATCH (n:CPGNode) RETURN count(n) → 202,268&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  ✅ Count unchanged — MERGE correctly prevented all duplicates.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Count unchanged — MERGE correctly prevented all duplicates.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -804,7 +804,7 @@ normal for a single-node Neo4j on a laptop.
   Waiting 30s for connector to process ...
   After  re-produce: MATCH (n:CPGNode) RETURN count(n) → 202,268
 
-  ✅ Count unchanged — MERGE correctly prevented all duplicates.
+   Count unchanged — MERGE correctly prevented all duplicates.
 </pre></div>
 </div>
 </div>
@@ -835,7 +835,7 @@ normal for a single-node Neo4j on a laptop.
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">neo4j</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphDatabase</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">neo4j</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphDatabase</span>
 
 <span class="n">URI</span>  <span class="o">=</span> <span class="s1">&#39;bolt://localhost:7687&#39;</span>
 <span class="n">AUTH</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;neo4j&#39;</span><span class="p">,</span> <span class="s1">&#39;cpgpassword&#39;</span><span class="p">)</span>
@@ -854,7 +854,7 @@ normal for a single-node Neo4j on a laptop.
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Neo4j connection check:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  URI   : </span><span class="si">{</span><span class="n">URI</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Auth  : neo4j / cpgpassword&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Status: ✅ Connected&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Status:  Connected&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Quick counts via neo4j Python driver:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  CPGNode count  : </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s1">&gt;6,</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -869,14 +869,14 @@ normal for a single-node Neo4j on a laptop.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Neo4j connection check:
   URI   : bolt://localhost:7687
   Auth  : neo4j / cpgpassword
-  Status: ✅ Connected
+  Status:  Connected
 
 Quick counts via neo4j Python driver:
   CPGNode count  : 202,268
   PARENT_OF count: 141,407
-  CFG count      :  42,102
-  DFG count      :  40,631
-  CALL count     :  22,340
+  CFG count      : 42,102
+  DFG count      : 40,631
+  CALL count     : 22,340
 </pre></div>
 </div>
 </div>
@@ -885,7 +885,7 @@ Quick counts via neo4j Python driver:
 <section id="reflection">
 <h2>4.9 Reflection<a class="headerlink" href="#reflection" title="Link to this heading">#</a></h2>
 <section id="what-worked">
-<h3>✅ What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
+<h3>What worked<a class="headerlink" href="#what-worked" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Kafka → Neo4j without Spark</strong>: The Neo4j Kafka Connector Sink fulfilled the lab’s requirement perfectly. No intermediate Spark layer needed.</p></li>
 <li><p><strong>MERGE idempotency</strong>: Verified that sending the same file’s events twice (62 nodes, 21 edges) left Neo4j counts unchanged — zero duplicates created.</p></li>
@@ -895,7 +895,7 @@ Quick counts via neo4j Python driver:
 </ul>
 </section>
 <section id="most-difficult-bug-apoc-silently-ignored">
-<h3>⚠️ Most difficult bug: APOC silently ignored<a class="headerlink" href="#most-difficult-bug-apoc-silently-ignored" title="Link to this heading">#</a></h3>
+<h3>Most difficult bug: APOC silently ignored<a class="headerlink" href="#most-difficult-bug-apoc-silently-ignored" title="Link to this heading">#</a></h3>
 <p>Our first edge Cypher used APOC:</p>
 <div class="highlight-cypher notranslate"><div class="highlight"><pre><span></span><span class="k">CALL</span><span class="w"> </span><span class="n">apoc</span><span class="p">.</span><span class="k">merge</span><span class="p">.</span><span class="n">relationship</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="n">edge_type</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="n">edge_id</span><span class="p">},</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span>
 </pre></div>
@@ -910,7 +910,7 @@ Quick counts via neo4j Python driver:
 <p><strong>Resolution</strong>: Replaced APOC with <code class="docutils literal notranslate"><span class="pre">FOREACH/CASE</span></code> on 4 static edge type names → immediate success.</p>
 </section>
 <section id="performance-lesson">
-<h3>💡 Performance lesson<a class="headerlink" href="#performance-lesson" title="Link to this heading">#</a></h3>
+<h3>Performance lesson<a class="headerlink" href="#performance-lesson" title="Link to this heading">#</a></h3>
 <p>The connector executes <strong>one Cypher transaction per message</strong>. At 459,699 messages this means ~459,699 separate write transactions to Neo4j. On a laptop this takes ~4-6 hours. A production deployment would use batching (connector <code class="docutils literal notranslate"><span class="pre">batch.size</span></code> config) or a pre-built graph import tool like <code class="docutils literal notranslate"><span class="pre">neo4j-admin</span> <span class="pre">import</span></code>.</p>
 </section>
 </section>
@@ -998,9 +998,9 @@ Quick counts via neo4j Python driver:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idempotency-verification">4.7 Idempotency Verification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j-browser-graph-visualization">4.8 Neo4j Browser — Graph Visualization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection">4.9 Reflection</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">✅ What worked</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-difficult-bug-apoc-silently-ignored">⚠️ Most difficult bug: APOC silently ignored</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-lesson">💡 Performance lesson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-worked">What worked</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-difficult-bug-apoc-silently-ignored">Most difficult bug: APOC silently ignored</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-lesson">Performance lesson</a></li>
 </ul>
 </li>
 </ul>
