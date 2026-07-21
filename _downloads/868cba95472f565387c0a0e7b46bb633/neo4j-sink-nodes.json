@@ -1,0 +1,16 @@
+{
+  "name": "neo4j-cpg-nodes-sink",
+  "config": {
+    "connector.class": "org.neo4j.connectors.kafka.sink.Neo4jConnector",
+    "topics": "cpg.nodes",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
+    "neo4j.uri": "bolt://neo4j:7687",
+    "neo4j.database": "neo4j",
+    "neo4j.authentication.basic.username": "neo4j",
+    "neo4j.authentication.basic.password": "cpgpassword",
+    "neo4j.cypher.topic.cpg.nodes": "MERGE (n:CPGNode {id: event.node_id}) SET n.file_path = event.file_path, n.node_type = event.node_type, n.name = event.name, n.lineno = event.lineno, n.col_offset = event.col_offset, n.end_lineno = event.end_lineno, n.parent_id = event.parent_id, n.schema_version = event.schema_version, n.event_time = event.event_time WITH n, event WHERE event.parent_id IS NOT NULL MERGE (p:CPGNode {id: event.parent_id}) MERGE (p)-[:PARENT_OF]->(n)",
+    "tasks.max": "3"
+  }
+}
