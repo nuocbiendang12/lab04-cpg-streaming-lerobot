@@ -26,3 +26,5 @@ Thumbs.db
 # instructor-provided assignment PDF (course material, not team's work)
 [BigData] Lab04 - StreamingV0.pdf
 lab04_content.txt
+book/_build/
+book/_build/

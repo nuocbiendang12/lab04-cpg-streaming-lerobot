@@ -9,5 +9,9 @@ chapters:
     title: "Task 3 · Kafka Topic Design"
   - file: notebooks/task4_neo4j
     title: "Task 4 · Graph Topology Ingestion (Neo4j)"
+  - file: notebooks/task5_mongo
+    title: "Task 5 · Source Metadata Ingestion (MongoDB)"
+  - file: notebooks/task6_replay
+    title: "Task 6 · Idempotent Replay Verification"
   - file: architecture
     title: "Architecture Diagram"
